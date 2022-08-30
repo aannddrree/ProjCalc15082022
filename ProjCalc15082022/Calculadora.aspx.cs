@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -62,6 +63,62 @@ namespace ProjCalc15082022
         protected void btn9_Click(object sender, EventArgs e)
         {
             txtvisor.Text = txtvisor.Text.Trim() + "9";
+        }
+
+        protected void btnmais_Click(object sender, EventArgs e)
+        {
+            Operacao.Value = "+";
+            NumAnterior.Value = (double.Parse(NumAnterior.Value) + double.Parse(txtvisor.Text)).ToString();
+            LblDados.Text = LblDados.Text + " " + txtvisor.Text + " + ";
+            txtvisor.Text = "";
+            
+        }
+
+        protected void btnigual_Click(object sender, EventArgs e)
+        {
+            switch (Operacao.Value)
+            {
+                case "+":
+                    double resultado = (double.Parse(txtvisor.Text) + double.Parse(NumAnterior.Value));
+                    LblDados.Text = LblDados.Text + " " + txtvisor.Text + " = ";
+                    txtvisor.Text = resultado.ToString();
+                    WriteTxt(LblDados.Text + " " + resultado.ToString());
+                    WriteDataBase(LblDados.Text + " " + resultado.ToString());
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void WriteTxt(string result)
+        {
+            string path = @"D:\tmp\calculadora.txt";
+            string readText = "";
+
+            if (File.Exists(path))
+            {
+                readText = File.ReadAllText(path);
+            }
+
+            // Write file using StreamWriter  
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                if (readText != "")
+                    writer.Write(readText);
+
+                writer.WriteLine(DateTime.Now + ": " + result);
+            }
+        }
+
+        private void WriteDataBase(string result)
+        {
+            CalculadoraModel calculadora = new CalculadoraModel()
+            {
+                Calculo = result,
+                DataHora = DateTime.Now.ToString()
+            };
+
+            new BancoDados().Inserir(calculadora);
         }
     }
 }

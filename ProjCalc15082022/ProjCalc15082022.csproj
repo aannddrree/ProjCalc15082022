@@ -71,6 +71,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BancoDados.cs" />
     <Compile Include="Calculadora.aspx.cs">
       <DependentUpon>Calculadora.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -78,6 +79,7 @@
     <Compile Include="Calculadora.aspx.designer.cs">
       <DependentUpon>Calculadora.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CalculadoraModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

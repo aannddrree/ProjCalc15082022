@@ -24,11 +24,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="LblDados" runat="server"></asp:Label>
             <br />
             <table style="width:100%;">
                 <tr>
                     <td colspan="3">
-                        <asp:TextBox ID="txtvisor" runat="server" Width="262px"></asp:TextBox>
+                        <asp:TextBox ID="txtvisor" runat="server" Width="262px" Style="text-align: right" ></asp:TextBox>
                     </td>
                     <td class="auto-style3">
                         <asp:Button ID="btnapagar" runat="server" Text="&lt;" Width="50px" />
@@ -81,7 +83,7 @@
                         <asp:Button ID="btn3" runat="server" OnClick="btn3_Click" Text="3" Width="52px" />
                     </td>
                     <td class="auto-style3">
-                        <asp:Button ID="btnmais" runat="server" Text="+" Width="50px" />
+                        <asp:Button ID="btnmais" runat="server" Text="+" Width="50px" OnClick="btnmais_Click" />
                     </td>
                 </tr>
                 <tr>
@@ -91,12 +93,13 @@
                     </td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style3">
-                        <asp:Button ID="btnigual" runat="server" Text="=" Width="50px" />
+                        <asp:Button ID="btnigual" runat="server" Text="=" Width="50px" OnClick="btnigual_Click" />
                     </td>
                 </tr>
             </table>
         </div>
-        <asp:HiddenField ID="HiddenField1" runat="server" />
+        <asp:HiddenField ID="NumAnterior" runat="server" Value="0" />
+        <asp:HiddenField ID="Operacao" runat="server" />
     </form>
 </body>
 </html>

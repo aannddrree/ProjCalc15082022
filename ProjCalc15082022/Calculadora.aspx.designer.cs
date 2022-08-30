@@ -24,6 +24,15 @@ namespace ProjCalc15082022
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Controle LblDados.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblDados;
+
+        /// <summary>
         /// Controle txtvisor.
         /// </summary>
         /// <remarks>
@@ -177,12 +186,21 @@ namespace ProjCalc15082022
         protected global::System.Web.UI.WebControls.Button btnigual;
 
         /// <summary>
-        /// Controle HiddenField1.
+        /// Controle NumAnterior.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
+        protected global::System.Web.UI.WebControls.HiddenField NumAnterior;
+
+        /// <summary>
+        /// Controle Operacao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField Operacao;
     }
 }
